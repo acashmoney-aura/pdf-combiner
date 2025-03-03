@@ -131,6 +131,19 @@ In the matrix **P**, for each Jordan block corresponding to an eigenvalue:
         except Exception as e:
             st.write("Could not compute the Jordan form and generalized eigenvectors. This might occur if the matrix is already diagonalizable or if an error occurred.")
 
+        # Compute and display the diagonal form of A (if it exists)
+        st.subheader("Diagonalization of Matrix A")
+        try:
+            P_diag, D = A.diagonalize()
+            st.write("Diagonal Matrix D:")
+            st.latex(sp.latex(D))
+            st.write("Matrix of Eigenvectors P:")
+            st.latex(sp.latex(P_diag))
+            st.write("Verification: \( A = P D P^{-1} \)")
+            st.latex(sp.latex(A - P_diag * D * P_diag.inv()))
+        except Exception as e:
+            st.write("Matrix A is not diagonalizable.")
+
 #########################
 # TAB 2: Differential Equations, Integrals & Equilibrium Analysis
 #########################
