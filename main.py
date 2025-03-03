@@ -72,6 +72,28 @@ You can enter fractions (e.g. `1/2`) if you check the "Use fractions" box.
                 st.write("Eigenvector:", vec)
             st.write("---")
         
+        # Calculate and display powers of (A - eigenvalue * I)
+        st.subheader("Powers of $ A - \lambda I $")
+        for eigenval, alg_mult, eigenvecs in eig_data:
+            # Compute (A - eigenvalue * I)
+            I = sp.eye(A.shape[0])  # Identity matrix of the same size as A
+            A_minus_lambda_I = A - eigenval * I
+            
+            # Calculate powers
+            A_minus_lambda_I_1 = A_minus_lambda_I
+            A_minus_lambda_I_2 = sp.simplify(A_minus_lambda_I**2)
+            A_minus_lambda_I_3 = sp.simplify(A_minus_lambda_I**3)
+            
+            st.write(f"**For Eigenvalue:** ${eigenval}$")
+            st.write("Powers of $ A - \lambda I $:")
+            st.write("1st Power:")
+            st.latex(sp.latex(A_minus_lambda_I_1))
+            st.write("2nd Power:")
+            st.latex(sp.latex(A_minus_lambda_I_2))
+            st.write("3rd Power:")
+            st.latex(sp.latex(A_minus_lambda_I_3))
+            st.write("---")
+        
         # Fundamental matrix (matrix exponential)
         t = sp.symbols('t', real=True)
         M_t = (A * t).exp()
@@ -557,7 +579,7 @@ For an autonomous ODE
 $$
 x'(t)=v(x(t)),
 $$
-Barrow’s formula gives
+Barrow's formula gives
 $$
 t(x)=t_0+\int_{x_0}^{x} \frac{dz}{v(z)}.
 $$
@@ -591,7 +613,7 @@ $$
 $$
 If all eigenvalues have strictly negative real parts, the solution converges to 0.
 
-**Duhamel’s Formula**
+**Duhamel's Formula**
 
 For the non-homogeneous equation
 $$
