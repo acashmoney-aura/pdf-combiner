@@ -632,6 +632,33 @@ An equilibrium point $x^*$ of a vector field $v$ is:
 
 When all eigenvalues of the linearization have strictly negative real parts, the equilibrium is asymptotically stable.
 
+**Euler's Formula**
+For the complex exponential, Euler's formula states:
+$$
+e^{i\theta}=\cos(\theta)+i\sin(\theta).
+$$
+
+**Hyperbolic Function Integrals and Derivatives**
+The integrals of hyperbolic functions are:
+$$
+\int \cosh(x)\,dx = \sinh(x) + C,
+\int \sinh(x)\,dx = \cosh(x) + C,
+\int \tanh(x)\,dx = \ln(\cosh(x)) + C,
+\int \coth(x)\,dx = \ln(\sinh(x)) + C,
+\int \text{sech}(x)\,dx = \arctan(\tanh(x/2)) + C,
+\int \text{csch}(x)\,dx = \ln\left(\tanh(x/2)\right) + C.
+$$
+
+The derivatives of hyperbolic functions are:
+$$
+\frac{d}{dx}\sinh(x) = \cosh(x), \quad \frac{d}{dx}\cosh(x) = \sinh(x), \quad \frac{d}{dx}\tanh(x) = \text{sech}^2(x).
+$$
+
+Rewrite in terms of exponentials:
+$$
+\cosh(x) = \frac{e^x + e^{-x}}{2}, \quad \sinh(x) = \frac{e^x - e^{-x}}{2}, \quad \tanh(x) = \frac{\sinh(x)}{\cosh(x)}.
+$$
+
 ---
 
 These notes summarize key methods and concepts in solving differential equations and analyzing dynamical systems.
