@@ -1,7 +1,4 @@
-PyPDF2
-base64
-PIL 
-tempfile
-pdf2image
-uuid
-functools
+streamlit>=1.32.0
+PyPDF2>=3.0.0
+pdf2image>=1.16.0
+Pillow>=10.0.0
