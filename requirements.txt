@@ -1,10 +1,7 @@
 PyPDF2
-io
 base64
 PIL 
 tempfile
-os
 pdf2image
 uuid
-time
 functools
